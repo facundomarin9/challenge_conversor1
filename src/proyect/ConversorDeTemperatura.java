@@ -154,6 +154,11 @@ public class ConversorDeTemperatura extends JFrame {
 						double mostrar = temp.convert(textFieldMandar, comboBox1, comboBox2);
 						JOptionPane.showMessageDialog(btnNewButton, "Son " + mostrar + " " + temp.getAbrevTemp(), "Conversor de Temperatura", JOptionPane.INFORMATION_MESSAGE );		
 					}	
+					int var = JOptionPane.showConfirmDialog(btnNewButton, "Desea Continuar?", "Conversor de Unidades", JOptionPane.YES_NO_CANCEL_OPTION);
+					if(var != 0) {
+						JOptionPane.showMessageDialog(btnNewButton, "Programa finalizado.", "Conversor de Unidades", JOptionPane.INFORMATION_MESSAGE);
+						dispose();	
+					}
 				}catch(NumberFormatException e2) {
 					JOptionPane.showMessageDialog(btnNewButton, "No se puede insertar letras ni caracteres especiales. SOLO NÚMEROS.", "Error", JOptionPane.INFORMATION_MESSAGE);
 				}		

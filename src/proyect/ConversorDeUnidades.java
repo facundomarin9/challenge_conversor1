@@ -109,10 +109,16 @@ public class ConversorDeUnidades extends JFrame {
 				try {
 					double numeroInput = Double.parseDouble(textField.getText());
 					JOptionPane.showMessageDialog(btnNewButton, "Son " + unidad1.convertir(numeroInput, unidad2) + " " + comboBox_1.getSelectedItem(), "Conversor de Unidades", JOptionPane.INFORMATION_MESSAGE );	
+					int var = JOptionPane.showConfirmDialog(btnNewButton, "Desea Continuar?", "Conversor de Unidades", JOptionPane.YES_NO_CANCEL_OPTION);
+					if(var != 0) {
+						JOptionPane.showMessageDialog(btnNewButton, "Programa finalizado.", "Conversor de Unidades", JOptionPane.INFORMATION_MESSAGE);
+						dispose();	
+					}
 				}catch(NumberFormatException e2) {
 					JOptionPane.showMessageDialog(btnNewButton, "No se puede insertar letras ni caracteres especiales. SOLO NÚMEROS.", "Error", JOptionPane.INFORMATION_MESSAGE);
 				}	
 			}
+	
 		});
 		btnNewButton.setBounds(116, 297, 118, 36);
 		contentPane.add(btnNewButton);
